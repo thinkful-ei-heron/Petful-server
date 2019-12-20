@@ -10,9 +10,9 @@ let dogQueue = services.dogQueue;
 
 dogRouter
     .route('/')
-    .get((req,res,next) => {
-        let currDog = services.currAnimal(dogQueue); 
-        if(!currDog){
+    .get((req, res, next) => {
+        let currDog = services.currAnimal(dogQueue);
+        if (!currDog) {
             services.createQueues();
             currDog = services.currAnimal(dogQueue);
         }
@@ -23,8 +23,9 @@ dogRouter
 
 dogRouter
     .route('/')
-    .delete((req,res,next) => {
-        res.status(204).end();
+    .delete((req, res, next) => {
+        dogQueue.dequeue();
+        res.status(200).send({ message: 'Successful Adoption' });
     });
 
 // endpoints for deleting dogs

@@ -20,7 +20,7 @@ catRouter
     .route('/')
     .delete((req,res,next) => {
         catQueue.dequeue();
-        res.status(204).end();
+        res.status(200).send({message: 'Successful Adoption'});
     });
 
 module.exports = catRouter;

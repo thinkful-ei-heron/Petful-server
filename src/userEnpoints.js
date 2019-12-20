@@ -16,6 +16,10 @@ userRouter
         res.status(200);
         res.json(currUsr);
     });
-
-
+userRouter
+    .route('/')
+    .delete((req,res,next) => {
+        userQueue.dequeue();
+        res.status(200).send({message: 'Successful Adoption'});
+    });
     module.exports = userRouter;
