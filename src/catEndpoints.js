@@ -1,22 +1,25 @@
 const express  = require('express');
 const catRouter = express.Router();
 const Queue = require('./queue');
+const services = require('./cats/scratch');
 
-let cat = new Queue;
-
-
+let catQueue = services.catQueue;
 
 catRouter
 .route('/')
 .get((req,res) => {
-    console.log('get for cat');
-    res.json(catData);
+    let currCat = services.currAnimal(catQueue);
+    if(!currCat){
+        services.createQueues();
+        currCat = services.currAnimal(catQueue);
+    }
+    res.json(currCat);
 });
-
 
 catRouter
     .route('/')
     .delete((req,res,next) => {
+        catQueue.dequeue();
         res.status(204).end();
     });
 

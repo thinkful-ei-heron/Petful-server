@@ -2,39 +2,23 @@ const express = require('express');
 //require('dotenv').config();
 const dogRouter = express.Router();
 const Queue = require('./queue');
+const services = require('./cats/scratch');
 
-// function to fill the dog queue
-// function to reset the dog queue if its length is 0
-// function to show all dogs?
-
-// when client adopts dog it is dequeued
-
-// need a user queue
-
-// 3 users
-// input in the user queue
-
-
-
-
-
-let dogs = [
-    {
-    imageURL: 'http://www.dogster.com/wp-content/uploads/2015/05/Cute%20dog%20listening%20to%20music%201_1.jpg',
-    imageDescription: 'A smiling golden-brown golden retriever listening to music.',
-    name: 'Zeus',
-    sex: 'Male',
-    age: 3,
-    breed: 'Golden Retriever',
-    story: 'Owner Passed away'
-  }
-];
 // endpoints for getting Dogs
+
+let dogQueue = services.dogQueue;
+
 dogRouter
     .route('/')
     .get((req,res,next) => {
+        let currDog = services.currAnimal(dogQueue); 
+        if(!currDog){
+            services.createQueues();
+            currDog = services.currAnimal(dogQueue);
+        }
+
         res.status(200);
-        res.json(dogs);
+        res.json(currDog);
     });
 
 dogRouter
