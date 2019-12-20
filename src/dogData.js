@@ -10,5 +10,5 @@ let dogs = [
   }
 ];
 
-
+module.exports = dogs;
 
