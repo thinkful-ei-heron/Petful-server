@@ -5,6 +5,7 @@ const Queue = require('./queue');
 const services = require('./cats/scratch');
 
 let userQueue = services.userQueue;
+
 userRouter
     .route('/')
     .get((req,res,next) => {
@@ -16,6 +17,19 @@ userRouter
         res.status(200);
         res.json(currUsr);
     });
+userRouter
+    .route('/all')
+    .get((req, res, next) => {
+
+        if(userQueue.first === null){
+            services.createQueues();
+        }
+        let users = services.getAllUsers(userQueue);
+        res.status(200);
+        res.json(users);
+    });
+
+
 userRouter
     .route('/')
     .delete((req,res,next) => {

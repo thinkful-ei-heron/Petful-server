@@ -29,6 +29,16 @@ function adoptPet(queue){
    return queue.dequeue();
 
 }
+
+function getAllUsers(queue){
+    let userList = [];
+    for(let i = 0; i < users.length; i++){
+        userList.push(queue.dequeue());
+    }
+    return userList;
+}
+
+
 // This will be used to give to the client the current user/ animal
 function currAnimal(queue){
    return queue.peek();
@@ -37,7 +47,8 @@ function main(){
     createQueues();
     currAnimal(dogQueue);
     dogQueue.dequeue();
+    console.log(getAllUsers(userQueue));
 }
 //console.log(main());
 
-module.exports = {createQueues, currAnimal, adoptPet, dogQueue, catQueue, userQueue};
+module.exports = {createQueues, currAnimal, adoptPet, dogQueue, catQueue, userQueue, getAllUsers};
