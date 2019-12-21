@@ -1,26 +1,39 @@
-# Express Boilerplate!
+## Project Name: FIFO Adoption Agency
 
-This is a boilerplate project used for starting new projects!
+It is a collaboration between Glaiza Wagner and Wesley Jacobs.
 
-## How do set up?
+Live app : [Petful-Client](...todo...)
+Heroku   : [Petful-Server] (...todo...)
 
-Complete the following steps to start a new project (NEW-PROJECT-NAME):
+## API Endpoints
+The following are the request endpoints for this server:::
 
-1. Clone this repository to your local machine `git clone BOILERPLATE-URL NEW-PROJECTS-NAME`
-2. `cd` into the cloned repository
-3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
-4. Install the node dependencies `npm install`
-5. Move the example Environment file to `.env` that will be ignored by git and read by the express server `mv example.env .env`
-6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
+Base URL = '...'
 
-## Scripts
+Cat Endpoints
+    GET /cat => It will display the first cat in queue to be adopted. 
 
-Start the application `npm start`
+    DELETE /cat => When the cat is adopted, it will be automatically removed from the queue.
 
-Start nodemon for the application `npm run dev`
+Dog Endpoints
+    GET /dog => It will display the first dog in queue to be adopted. 
 
-Run the tests in watch mode `npm test`
+    DELETE /dog => When the dog is adopted, it will be automatically removed from the queue.
 
-## Deploying
+User Endpoints
+    GET /user
+        /user/all => It will display all the user that's in the queue.
+    
+    DELETE /user => When they are done adopting, they will be removed from the queue.
 
-When your new project is ready for deployment, add a new heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
+
+Success Endpoints
+    GET /success => It will show all lists of the animals that has been adopted.
+
+## Technologies
+- Node
+- Express
+- Mocha
+- Chai
+- Supertest
+- Deployed in Heroku
