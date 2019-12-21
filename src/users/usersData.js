@@ -11,10 +11,6 @@ let users = [
         userName: 'Maggie',
         status: 'Bot'
     },
-    {
-        userName: 'You',
-        status: 'User'
-    },
 ];
 
 
