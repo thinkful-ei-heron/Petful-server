@@ -48,7 +48,13 @@ function main(){
     currAnimal(dogQueue);
     dogQueue.dequeue();
     console.log(getAllUsers(userQueue));
+    // console.log(addNewUser('glaiza'))
 }
 //console.log(main());
 
-module.exports = {createQueues, currAnimal, adoptPet, dogQueue, catQueue, userQueue, getAllUsers};
+//adding new user
+function addNewUser(user) {
+    return userQueue.enqueue(user);
+}
+console.log(addNewUser('Glaiza', 'test'));
+module.exports = {createQueues, currAnimal, adoptPet, dogQueue, catQueue, userQueue, getAllUsers, addNewUser};

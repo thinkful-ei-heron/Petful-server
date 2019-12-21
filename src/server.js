@@ -16,6 +16,8 @@ app.use('/api/dog', dogRouter);
 app.use('/api/cat', catRouter);
 app.use('/api/user', userRouter);
 
+app.get('/', (req,res, next) => { res.status(200).end(); });
+
 // Catch-all 404
 app.use(function (req, res, next) {
   const err = new Error('Not Found');
@@ -34,7 +36,8 @@ app.use(function (err, req, res, next) {
 });
 
 
-
 app.listen(PORT,()=>{
-  console.log(`Serving on ${PORT}`);
+  console.log(`Server listening at http://localhost:${PORT}`);
 });
+
+module.exports  = app;

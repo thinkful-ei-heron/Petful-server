@@ -1,6 +1,7 @@
 const express = require('express');
 //require('dotenv').config();
 const userRouter = express.Router();
+const jsonParser = express.Router();
 const Queue = require('./queue');
 const services = require('./cats/scratch');
 
@@ -16,6 +17,12 @@ userRouter
         }
         res.status(200);
         res.json(currUsr);
+    })
+    .post(jsonParser,(req,res,next)=> {
+        console.log(req.body);
+        const { user } = req.body;
+        services.addNewUser(user);
+        res.status(201).json(userQueue);
     });
 userRouter
     .route('/all')
