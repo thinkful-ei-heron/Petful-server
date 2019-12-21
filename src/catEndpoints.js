@@ -14,7 +14,8 @@ catRouter
         currCat = services.currAnimal(catQueue);
     }
     catQueue.dequeue();
-    res.status(200).json(currCat);
+    res.status(200);
+    res.json(currCat);
 });
 
 catRouter
