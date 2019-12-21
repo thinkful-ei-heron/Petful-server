@@ -6,10 +6,10 @@ let success = [
         ownerName: 'Wesley',
     },
     {
-        animalName: '',
-        imgUrl: '',
-        imgDesc: '',
-        ownerName: '',
+        animalName: 'Lou',
+        imgUrl: 'https://www.pexels.com/photo/adorable-animal-blur-cat-617278/',
+        imgDesc: 'She is a sweet, green-eyed, striped tabby cat with white bib and white paws',
+        ownerName: 'Glaiza',
     }
 ];
 
