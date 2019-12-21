@@ -9,7 +9,7 @@ let success = [
     {
         id: 2,
         animalName: 'Lou',
-        imgUrl: 'https://www.wallpaperflare.com/gray-tabby-cat-cat-green-eyed-muzzle-wallpaper-165665',
+        imgUrl: 'https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
         imgDesc: 'She is a sweet, green-eyed, striped tabby cat.',
         ownerName: 'Glaiza',
     }

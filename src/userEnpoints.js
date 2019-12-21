@@ -27,7 +27,6 @@ userRouter
 userRouter
     .route('/all')
     .get((req, res, next) => {
-
         if(userQueue.first === null){
             services.fillUserQueue();
         }

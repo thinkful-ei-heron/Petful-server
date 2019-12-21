@@ -45,7 +45,6 @@ function getAllUsers(queue){
         let tempValue = queue.dequeue();
         list.push(tempValue);
     }
-    //console.log('list after for LOOP',list);
     return list;
 }
 
