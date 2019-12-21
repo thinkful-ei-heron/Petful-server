@@ -67,4 +67,11 @@ function main(){
 }
 main();
 
+function addNewUser(user) {
+    return userQueue.enqueue(user);
+}
+
 module.exports = {fillCatQueue, fillDogQueue, fillUserQueue, currAnimal, adoptPet, dogQueue, catQueue, userQueue, getAllUsers, removeUser};
+//adding new user
+
+
