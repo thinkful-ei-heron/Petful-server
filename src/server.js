@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const morgan = require('morgan');
 const dogRouter = require('./dogEndpoints'); 
 const catRouter = require('./catEndpoints');
 const { CLIENT_ORIGIN, PORT } = require('./config');
@@ -11,7 +12,8 @@ const app = express();
 app.use(cors({
   origin: CLIENT_ORIGIN
 }));
-
+const morganSetting = process.env.NODE_ENV === 'production' ? 'tiny' : 'common'
+app.use(morgan(morganSetting))
 
 
 app.use('/api/dog', dogRouter);
@@ -40,7 +42,7 @@ app.use(function (err, req, res, next) {
 
 
 app.listen(PORT,()=>{
-  console.log(`Server listening at http://localhost:${PORT}`);
+  //console.log(`Server listening at http://localhost:${PORT}`);
 });
 
 module.exports  = app;
