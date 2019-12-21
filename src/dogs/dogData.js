@@ -9,13 +9,13 @@ let dogs = [
     story: 'Owner Passed away'
   },
   {
-    imageURL: 'http://www.dogster.com/wp-content/uploads/2015/05/Cute%20dog%20listening%20to%20music%201_1.jpg',
-    imageDescription: 'A smiling golden-brown golden retreiver listening to music.',
-    name: 'Charles',
+    imageURL: 'https://images.dog.ceo/breeds/mastiff-english/2.jpg',
+    imageDescription: 'A sleeping Mastiff angel.',
+    name: 'Tiny',
     sex: 'Male',
-    age: 3,
-    breed: 'Golden Retriever',
-    story: 'Owner Passed away'
+    age: 5,
+    breed: 'English Mastiff',
+    story: 'Stray'
   },
   {
     imageURL: 'http://www.dogster.com/wp-content/uploads/2015/05/Cute%20dog%20listening%20to%20music%201_1.jpg',
