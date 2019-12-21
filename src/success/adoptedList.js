@@ -9,8 +9,8 @@ let success = [
     {
         id: 2,
         animalName: 'Lou',
-        imgUrl: 'https://www.pexels.com/photo/adorable-animal-blur-cat-617278/',
-        imgDesc: 'She is a sweet, green-eyed, striped tabby cat with white bib and white paws',
+        imgUrl: 'https://www.wallpaperflare.com/gray-tabby-cat-cat-green-eyed-muzzle-wallpaper-165665',
+        imgDesc: 'She is a sweet, green-eyed, striped tabby cat.',
         ownerName: 'Glaiza',
     }
 ];
