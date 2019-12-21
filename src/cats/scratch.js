@@ -12,13 +12,22 @@ const users = require('../users/usersData');
     let userQueue = new Queue();
 
 // This will be done when the queue reaches 0
-function createQueues(){
-    for(let i=0; i < dogs.length; i++){
-        dogQueue.enqueue(dogs[i]);
+function fillCatQueue(){
+    for(let i=0; i < cats.length; i++){
         catQueue.enqueue(cats[i]);
-        userQueue.enqueue(users[i]);
     }
     
+}
+
+function fillDogQueue(){
+    for(let i=0; i < dogs.length; i++){
+        dogQueue.enqueue(dogs[i]);
+    }
+}
+function fillUserQueue(){
+    for(let i=0; i < users.length; i++){
+        userQueue.enqueue(users[i]);
+    }
 }
 
 // This will be done on the delete endpoint.
@@ -31,11 +40,17 @@ function adoptPet(queue){
 }
 
 function getAllUsers(queue){
-    let userList = [];
-    for(let i = 0; i < users.length; i++){
-        userList.push(queue.dequeue());
+    let list = [];
+    for(let i = 0; i < 4;i++){
+        let tempValue = queue.dequeue();
+        list.push(tempValue);
     }
-    return userList;
+    //console.log('list after for LOOP',list);
+    return list;
+}
+
+function removeUser(){
+   return userQueue.dequeue();
 }
 
 
@@ -44,11 +59,12 @@ function currAnimal(queue){
    return queue.peek();
 }
 function main(){
-    createQueues();
-    currAnimal(dogQueue);
-    dogQueue.dequeue();
-    console.log(getAllUsers(userQueue));
+    if(userQueue.first === null) fillUserQueue();
+    if(dogQueue.first === null) fillDogQueue();
+    if(catQueue.first === null) fillCatQueue();
+    //console.log(userQueue);
+    //getAllUsers(userQueue);
 }
-//console.log(main());
+main();
 
-module.exports = {createQueues, currAnimal, adoptPet, dogQueue, catQueue, userQueue, getAllUsers};
+module.exports = {fillCatQueue, fillDogQueue, fillUserQueue, currAnimal, adoptPet, dogQueue, catQueue, userQueue, getAllUsers, removeUser};

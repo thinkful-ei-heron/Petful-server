@@ -13,7 +13,7 @@ dogRouter
     .get((req, res, next) => {
         let currDog = services.currAnimal(dogQueue);
         if (!currDog) {
-            services.createQueues();
+            services.fillDogQueue();
             currDog = services.currAnimal(dogQueue);
         }
 

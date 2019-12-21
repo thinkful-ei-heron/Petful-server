@@ -10,7 +10,7 @@ catRouter
 .get((req,res) => {
     let currCat = services.currAnimal(catQueue);
     if(!currCat){
-        services.createQueues();
+        services.fillCatQueue();
         currCat = services.currAnimal(catQueue);
     }
     res.json(currCat);

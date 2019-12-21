@@ -11,7 +11,7 @@ userRouter
     .get((req,res,next) => {
         let currUsr = services.currAnimal(userQueue);
         if(!currUsr){
-            services.createQueues();
+            services.fillUserQueue();
             currUsr = services.currAnimal(userQueue);
         }
         res.status(200);
@@ -22,7 +22,7 @@ userRouter
     .get((req, res, next) => {
 
         if(userQueue.first === null){
-            services.createQueues();
+            services.fillUserQueue();
         }
         let users = services.getAllUsers(userQueue);
         res.status(200);
@@ -33,7 +33,7 @@ userRouter
 userRouter
     .route('/')
     .delete((req,res,next) => {
-        userQueue.dequeue();
+        services.removeUser();
         res.status(200).send({message: 'Successful Adoption'});
     });
     module.exports = userRouter;

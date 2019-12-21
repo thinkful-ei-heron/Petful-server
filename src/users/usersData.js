@@ -12,7 +12,7 @@ let users = [
         status: 'Bot'
     },
     {
-        userName: 'YOU ARE UP!',
+        userName: 'You',
         status: 'User'
     },
 ];
