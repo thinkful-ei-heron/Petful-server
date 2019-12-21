@@ -13,6 +13,7 @@ catRouter
         services.fillCatQueue();
         currCat = services.currAnimal(catQueue);
     }
+    catQueue.dequeue();
     res.status(200).json(currCat);
 });
 

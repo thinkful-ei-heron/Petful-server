@@ -16,7 +16,7 @@ dogRouter
             services.fillDogQueue();
             currDog = services.currAnimal(dogQueue);
         }
-
+        dogQueue.dequeue();
         res.status(200);
         res.json(currDog);
     });
