@@ -5,7 +5,8 @@ const successRouter = express.Router();
 successRouter
 .route('/')
 .get((req,res,next) => {
-    res.status(200).json(adopted);
+    res.status(200);
+    res.json(adopted);
 });
 
 module.exports = successRouter;
