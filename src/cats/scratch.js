@@ -41,11 +41,10 @@ function adoptPet(queue){
 
 function getAllUsers(queue){
     let list = [];
-    for(let i = 0; i < 3;i++){
+    for(let i = 0; i < 4;i++){
         let tempValue = queue.dequeue();
         list.push(tempValue);
     }
-    //console.log('list after for LOOP',list);
     return list;
 }
 
