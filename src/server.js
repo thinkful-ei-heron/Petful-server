@@ -4,6 +4,8 @@ const dogRouter = require('./dogEndpoints');
 const catRouter = require('./catEndpoints');
 const { CLIENT_ORIGIN, PORT } = require('./config');
 const userRouter = require('./userEnpoints');
+const successRouter = require('./successEndpoints');
+
 const app = express();
 
 app.use(cors({
@@ -15,6 +17,7 @@ app.use(cors({
 app.use('/api/dog', dogRouter);
 app.use('/api/cat', catRouter);
 app.use('/api/user', userRouter);
+app.use('/api/success', successRouter);
 
 app.get('/', (req,res, next) => { res.status(200).end(); });
 
