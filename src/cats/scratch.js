@@ -41,7 +41,7 @@ function adoptPet(queue){
 
 function getAllUsers(queue){
     let list = [];
-    for(let i = 0; i < 4;i++){
+    for(let i = 0; i < 3;i++){
         let tempValue = queue.dequeue();
         list.push(tempValue);
     }
