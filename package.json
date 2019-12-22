@@ -8,7 +8,7 @@
   },
   "author": "Glaiza and Wesley",
   "license": "UNLICENSED",
-  "main": "./src/server.js",
+  "main": "index.js",
   "scripts": {
     "test": "mocha --require test/setup.js",
     "start": "node src/server.js",
