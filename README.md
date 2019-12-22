@@ -2,13 +2,13 @@
 
 It is a collaboration between Glaiza Wagner and Wesley Jacobs.
 
-Live app : [Petful-Client](...todo...)
-Heroku   : [Petful-Server] (...todo...)
+Live app : [Petful-Client](https://petful-client-glaiza-wesley.now.sh)
+Heroku   : [Petful-Server](https://petful-server-glaiza-wesley.herokuapp.com/)
 
 ## API Endpoints
 The following are the request endpoints for this server:::
 
-Base URL = '...'
+Base URL = `https://petful-server-glaiza-wesley.herokuapp.com/api`
 
 Cat Endpoints
     GET /cat => It will display the first cat in queue to be adopted. 
@@ -36,4 +36,8 @@ Success Endpoints
 - Mocha
 - Chai
 - Supertest
-- Deployed in Heroku
+
+Client - Deployed in Zeit
+Server - Deployed in Heroku
+
+Copyright G©W 2019
