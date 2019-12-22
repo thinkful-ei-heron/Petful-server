@@ -2,22 +2,23 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
+const helmet = require('helmet');
 const dogRouter = require('./dogEndpoints'); 
 const catRouter = require('./catEndpoints');
-const { CLIENT_ORIGIN, PORT } = require('./config');
+// const { CLIENT_ORIGIN, PORT } = require('./config');
 const userRouter = require('./userEnpoints');
 const successRouter = require('./successEndpoints');
-
 const app = express();
 
-app.use(cors({
-  origin: CLIENT_ORIGIN
-}));
+// app.use(cors({
+//   origin: CLIENT_ORIGIN
+// }));
 
 const morganSetting = process.env.NODE_ENV === 'production' ? 'tiny' : 'common';
 app.use(morgan(morganSetting));
-
-
+app.use(helmet());
+app.use(cors());
+app.use(express.json());
 app.use('/api/dog', dogRouter);
 app.use('/api/cat', catRouter);
 app.use('/api/user', userRouter);

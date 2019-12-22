@@ -7,7 +7,7 @@ let catQueue = services.catQueue;
 
 catRouter
 .route('/')
-.get((req,res) => {
+.get((req,res,next) => {
     let currCat = services.currAnimal(catQueue);
     if(!currCat){
         services.fillCatQueue();
