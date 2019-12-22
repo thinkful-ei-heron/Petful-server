@@ -22,7 +22,7 @@ app.use('/api/cat', catRouter);
 app.use('/api/user', userRouter);
 app.use('/api/success', successRouter);
 
-app.get('/', (req,res, next) => { res.status(200).end(); });
+app.get('/', (req,res, next) => { res.status(200).send('Hello'); });
 
 // Catch-all 404
 app.use(function (req, res, next) {
