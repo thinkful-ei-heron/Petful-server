@@ -6,4 +6,12 @@ describe('App', () => {
       .get('/')
       .expect(200).end();
   });
+  it('Get /api/cat', () => {
+    return supertest(app)
+      .get('/api/dog')
+      .expect(200);
+  });
+
+
+
 });
